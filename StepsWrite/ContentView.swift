@@ -12,7 +12,6 @@ struct ContentView: View {
     private var healthStore: HealthStore?
     @State private var stepsToAdd: String = ""
     @State private var startDate: Date = Date()
-    @State private var endDate: Date = Date()
     @State private var alertPresented = false
     
     init() {
@@ -29,7 +28,6 @@ struct ContentView: View {
                     TextField("Enter Steps To Add...", text: $stepsToAdd)
                         .keyboardType(.decimalPad)
                     DatePicker("Start Date", selection: $startDate)
-                    DatePicker("End Date", selection: $endDate, in: startDate...)
                 }
                 HStack{
                     Image(systemName: "plus.circle.fill")
@@ -38,7 +36,7 @@ struct ContentView: View {
                         if let healthStore = healthStore {
                             healthStore.requestAuthorization { success in
                                 if success {
-                                    healthStore.writeSteps(startDate: startDate, endDate: endDate, stepsToAdd: convertedSteps)
+                                    healthStore.writeSteps(startDate: startDate, stepsToAdd: convertedSteps)
                                     self.alertPresented.toggle()
                                     self.stepsToAdd = ""
                                 }

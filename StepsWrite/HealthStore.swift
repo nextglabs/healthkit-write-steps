@@ -18,9 +18,10 @@ class HealthStore {
         }
     }
     
-    func writeSteps(startDate: Date, endDate: Date, stepsToAdd: Double) {
+    func writeSteps(startDate: Date, stepsToAdd: Double) {
         let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
         
+        let endDate = startDate + 60 * 60 // add 1h to startDate
         let stepsSample = HKQuantitySample(type: stepType, quantity: HKQuantity.init(unit: HKUnit.count(), doubleValue: stepsToAdd), start: startDate, end: endDate)
         
         // After creating the sample, we call healthStore.save()
@@ -30,14 +31,16 @@ class HealthStore {
                 
                 if error != nil {
                     // something happened
+                    print("error = \(String(describing: error))")
                     return
                 }
                 
                 if success {
                     print("Steps successfully saved in HealthKit")
-                    
+                    return
                 } else {
                     // something happened again
+                    print("Unhandled case!")
                 }
                 
             })
