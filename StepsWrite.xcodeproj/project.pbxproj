@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18E0BEE028AA6046007CC9A6 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E0BEDF28AA6046007CC9A6 /* HealthKit.framework */; };
 		ED436D9E2607709E002F3AE9 /* StepsWriteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED436D9D2607709E002F3AE9 /* StepsWriteApp.swift */; };
 		ED436DA02607709E002F3AE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED436D9F2607709E002F3AE9 /* ContentView.swift */; };
 		ED436DA22607709F002F3AE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED436DA12607709F002F3AE9 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18E0BEDF28AA6046007CC9A6 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		ED436D9A2607709E002F3AE9 /* StepsWrite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepsWrite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED436D9D2607709E002F3AE9 /* StepsWriteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsWriteApp.swift; sourceTree = "<group>"; };
 		ED436D9F2607709E002F3AE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,17 +32,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E0BEE028AA6046007CC9A6 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18E0BEDE28AA6046007CC9A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18E0BEDF28AA6046007CC9A6 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED436D912607709E002F3AE9 = {
 			isa = PBXGroup;
 			children = (
 				ED436D9C2607709E002F3AE9 /* StepsWrite */,
 				ED436D9B2607709E002F3AE9 /* Products */,
+				18E0BEDE28AA6046007CC9A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,8 +112,9 @@
 		ED436D922607709E002F3AE9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					ED436D992607709E002F3AE9 = {
 						CreatedOnToolsVersion = 12.4;
@@ -156,6 +169,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -189,6 +203,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -217,6 +232,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -250,6 +266,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -279,12 +296,12 @@
 				DEVELOPMENT_TEAM = RQGFMKBS8E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = StepsWrite/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nextglabs.StepsWrite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nextglabs.StepsWriteApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,12 +319,12 @@
 				DEVELOPMENT_TEAM = RQGFMKBS8E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = StepsWrite/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nextglabs.StepsWrite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nextglabs.StepsWriteApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
